@@ -1,6 +1,7 @@
+import { Animated } from 'react-native'
 import styled from 'styled-components'
 
-const Container = styled.View`
+const Container = styled(Animated.View)`
   margin-top: 20px;
   height: 100px;
 `
