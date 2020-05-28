@@ -1,10 +1,17 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+
+import Header from '~/components/Header'
+import Cards from '~/components/Cards'
+import Tabs from '~/components/Tabs'
+
+import { Container } from './styles'
 
 export default function Main() {
   return (
-    <View>
-      <Text>Test</Text>
-    </View>
+    <Container>
+      <Header />
+      <Cards />
+      <Tabs />
+    </Container>
   )
 }
