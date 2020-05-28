@@ -55,7 +55,7 @@ export default function Cards() {
   
   return (
     <Content>
-      <Menu />
+      <Menu translateY={translateY} />
 
       <PanGestureHandler
         onGestureEvent={animatedEvent}
