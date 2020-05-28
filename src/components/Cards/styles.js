@@ -1,3 +1,4 @@
+import { Animated } from 'react-native'
 import styled from 'styled-components'
 
 const Content = styled.View`
@@ -6,7 +7,7 @@ const Content = styled.View`
   z-index: 5;
 `
 
-const CardContainer = styled.View`
+const CardContainer = styled(Animated.View)`
   position: absolute;
   top: 0;
   left: 0;
