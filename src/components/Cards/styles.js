@@ -36,6 +36,10 @@ const Title = styled.Text`
   font-size: 13px;
 `
 
+const Text = styled.Text`
+  font-size: 17px;
+`
+
 const Description = styled.Text`
   margin-top: 5px;
   color: #333;
@@ -46,7 +50,7 @@ const CardFooter = styled.View`
   padding: 20px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  background: #eee;
+  background: #EEE;
 `
 
 const Annotation = styled.Text`
@@ -56,6 +60,6 @@ const Annotation = styled.Text`
 
 export {
   Content, CardContainer, CardHeader,
-  CardContent, Title, Description,
-  CardFooter, Annotation
+  CardContent, Title, Text, Description,
+  CardFooter, Annotation,
 }
