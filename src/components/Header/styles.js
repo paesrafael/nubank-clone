@@ -20,6 +20,20 @@ const Title = styled.Text`
   font-weight: bold;
 `
 
+const InputView = styled.View``
+
+const Input = styled.TextInput`
+  padding: 15px;
+  margin: 15px;
+  margin-bottom: 0;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid #FFF;
+  background-color: #FFF;
+`
+
 export {
-  Container, Top, Logo, Title,
+  Container, Top,
+  Logo, Title,
+  InputView, Input,
 }
