@@ -21,5 +21,5 @@ const Title = styled.Text`
 `
 
 export {
-  Container, Top, Logo, Title
+  Container, Top, Logo, Title,
 }
