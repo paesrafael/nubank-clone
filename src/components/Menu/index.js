@@ -6,22 +6,25 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import {
   Container, Code,
   Nav, NavItem, NavText,
-  SignOutButton, SignOutButtonText
+  SignOutButton, SignOutButtonText,
 } from './styles'
 
-export default function Menu({ translateY }) {
+export default function Menu(translateY) {
+  const interpolateTranslateY = translateY.translateY
+
   return (
     <Container style={{
-      opacity: translateY.interpolate({
+      opacity: interpolateTranslateY.interpolate({
         inputRange: [0, 150],
-        outputRange: [0, 1]
-      })
-    }}>
+        outputRange: [0, 1],
+      }),
+    }}
+    >
       <Code>
         <QRCode
           value="https://www.pointec.dev"
           size={80}
-          color="#8B10AE"          
+          color="#8B10AE"
         />
       </Code>
 
