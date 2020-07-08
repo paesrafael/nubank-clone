@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Animated } from 'react-native'
 import { PanGestureHandler, State } from 'react-native-gesture-handler'
@@ -13,8 +13,14 @@ import {
 } from './styles'
 
 export default function Cards() {
+  const [soma, setSoma] = useState(50)
+  const [saldo, setSaldo] = useState('')
   let offset = 0
   const translateY = new Animated.Value(0)
+
+  useEffect(() => {
+    if (soma) setSaldo(soma)
+  }, [soma])
 
   const animatedEvent = Animated.event(
     [
@@ -40,6 +46,12 @@ export default function Cards() {
         translateY.setValue(offset)
         translateY.setOffset(0)
         offset = 0
+      }
+
+      if (translationY < 10) {
+        const numberRand = Math.floor(Math.random() * 1000) + 100
+        const calcular = saldo + numberRand
+        setSoma(calcular)
       }
 
       Animated.timing(translateY, {
@@ -82,7 +94,7 @@ export default function Cards() {
 
             <CardContent>
               <Title>Saldo disponível</Title>
-              <Description>R$ 10.999.900,00</Description>
+              <Description>R$ {saldo}</Description>
             </CardContent>
 
             <CardFooter>
