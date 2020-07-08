@@ -53,5 +53,5 @@ const SignOutButtonText = styled.Text`
 export {
   Container, Code,
   Nav, NavItem, NavText,
-  SignOutButton, SignOutButtonText
+  SignOutButton, SignOutButtonText,
 }
