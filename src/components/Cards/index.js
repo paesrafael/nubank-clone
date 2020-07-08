@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/FontAwesome5'
 import { Animated } from 'react-native'
 import { PanGestureHandler, State } from 'react-native-gesture-handler'
 
@@ -8,8 +8,8 @@ import Tabs from '~/components/Tabs'
 
 import {
   Content, CardContainer, CardHeader,
-  CardContent, Title, Description,
-  CardFooter, Annotation
+  CardContent, Title, Text, Description,
+  CardFooter, Annotation,
 } from './styles'
 
 export default function Cards() {
@@ -20,13 +20,13 @@ export default function Cards() {
     [
       {
         nativeEvent: {
-          translationY: translateY
-        }
-      }
+          translationY: translateY,
+        },
+      },
     ],
-    { useNativeDriver: true }
-  )  
-  
+    { useNativeDriver: true },
+  )
+
   async function onHandlerStateChange(event) {
     if (event.nativeEvent.oldState === State.ACTIVE) {
       let opened = false
@@ -41,11 +41,11 @@ export default function Cards() {
         translateY.setOffset(0)
         offset = 0
       }
-      
+
       Animated.timing(translateY, {
         toValue: opened ? 380 : 0,
         duration: 200,
-        useNativeDriver: true
+        useNativeDriver: true,
       }).start(() => {
         offset = opened ? 380 : 0
         translateY.setOffset(offset)
@@ -53,7 +53,7 @@ export default function Cards() {
       })
     }
   }
-  
+
   return (
     <>
       <Content>
@@ -68,20 +68,23 @@ export default function Cards() {
               translateY: translateY.interpolate({
                 inputRange: [-350, 0, 380],
                 outputRange: [-50, 0, 380],
-                extrapolate: 'clamp'
-              })
-            }]
-          }}>
+                extrapolate: 'clamp',
+              }),
+            }],
+          }}
+          >
             <CardHeader>
-              <Icon name="attach-money" size={28} color="#666" />
-              <Icon name="visibility-off" size={28} color="#666" />
+              <Text>
+                <Icon name="coins" size={25} color="#666" /> Conta
+              </Text>
+              <Icon name="eye" size={25} color="#666" />
             </CardHeader>
-            
+
             <CardContent>
               <Title>Saldo disponível</Title>
               <Description>R$ 10.999.900,00</Description>
             </CardContent>
-            
+
             <CardFooter>
               <Annotation>
                 Transferência de R$ 1.000,00 recebida de Rafael Paes hoje às 20:00
@@ -90,7 +93,7 @@ export default function Cards() {
           </CardContainer>
         </PanGestureHandler>
       </Content>
-    
+
       <Tabs translateY={translateY} />
     </>
   )
